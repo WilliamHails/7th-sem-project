@@ -88,7 +88,7 @@ b. Test ENROLL endpoint
     Also, your backend folder data/enrollments/1.json will be created containing the embedding.
 
 
-b. Test RECOGNIZE endpoint
+c. Test RECOGNIZE endpoint
 
     This checks whether the face in the image matches any enrolled student.
 
