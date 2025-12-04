@@ -74,18 +74,17 @@ c. Ensure your tables exist
 These folders will be created automatically, but ensure repo layout is:
 
 7th-sem-project/
-│
-├── backend/
-│   └── app/
-│        ├── main.py
-│        ├── models.py
-│        ├── database.py
-│        ├── embed_utils.py
-│
-├── data/
-│   ├── enrollments/      # canonical embeddings stored here
-│   ├── raw/              # original enrollment images
-│   └── predictions/      # recognition attempt images
+    backend/
+        app/
+            main.py
+            models.py
+            database.py
+            embed_utils.py
+
+    data/
+    enrollments/      # canonical embeddings stored here
+    raw/              # original enrollment images
+    predictions/      # recognition attempt images
 
 
 7. Run the backend
