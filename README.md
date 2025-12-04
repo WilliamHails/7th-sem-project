@@ -26,6 +26,9 @@ cd 7th-sem-project
 conda create -n fr_env python=3.10 -y
 conda activate fr_env
 
+#####Important#####
+Ja korba fr_env er bhitre, especially all those pip commands, naile ulda palda hoiya jae backend e jodi baire kora hoe.
+
 4. Install dependencies
 pip install -r requirements.txt
 
