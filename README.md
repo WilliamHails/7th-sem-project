@@ -26,6 +26,7 @@ cd 7th-sem-project
 3. Create and activate environment
 
 run these in anaconda prompt:
+
     conda create -n fr_env python=3.10 -y
 
     conda activate fr_env
@@ -35,6 +36,7 @@ Ja korba fr_env er bhitre, especially all those pip commands, naile ulda palda h
 
 4. Install dependencies
 run in said anaconda prompt:
+
     pip install -r requirements.txt
 
 ###This installs the exact working versions used during development.
@@ -42,6 +44,7 @@ run in said anaconda prompt:
 
 5. Run the backend
 same in anaconda prompt:
+
     cd backend
 
     uvicorn app.main:app --reload --port 8000
