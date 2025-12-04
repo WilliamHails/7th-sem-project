@@ -20,31 +20,38 @@ Download Miniconda from https://docs.conda.io/en/latest/miniconda.html
 
 2. Clone the Repo
 git clone https://github.com/WilliamHails/7th-sem-project.git
+
 cd 7th-sem-project
 
 3. Create and activate environment
-conda create -n fr_env python=3.10 -y
-conda activate fr_env
+
+run these in anaconda prompt:
+    conda create -n fr_env python=3.10 -y
+
+    conda activate fr_env
 
 #####Important#####
 Ja korba fr_env er bhitre, especially all those pip commands, naile ulda palda hoiya jae backend e jodi baire kora hoe.
 
 4. Install dependencies
-pip install -r requirements.txt
+run in said anaconda prompt:
+    pip install -r requirements.txt
 
 ###This installs the exact working versions used during development.
 
 
 5. Run the backend
-cd backend
-uvicorn app.main:app --reload --port 8000
+same in anaconda prompt:
+    cd backend
+
+    uvicorn app.main:app --reload --port 8000
 
 
 Backend will start on:
 http://127.0.0.1:8000
 
 
-6. Testing
+6. Testing (using postman{install postman if not installed} )
 
 a. Test the health endpoint
 
