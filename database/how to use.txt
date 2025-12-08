@@ -1,0 +1,25 @@
+Option B: Using pgAdmin (easier if you’re GUI-first)
+
+To export (backup):
+
+Open pgAdmin.
+
+Right-click your database → Backup…
+
+Set:
+
+Format: Custom or Plain
+
+Filename: e.g. D:\backups\mydb.backup
+
+Click Backup.
+
+Share that .backup (or .sql) file.
+
+To import (restore):
+
+On the other machine, in pgAdmin, create an empty DB (or just right-click Databases → Create → Database).
+
+Right-click the new database → Restore…
+
+Point to the .backup file, and click Restore.
