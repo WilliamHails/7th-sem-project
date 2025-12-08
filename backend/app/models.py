@@ -28,15 +28,29 @@ class StudentImage(Base):
     student = relationship("Student", back_populates="images")
 
 
+class Faculty(Base):
+    __tablename__ = "faculty"
+
+    faculty_id = Column(String(50), primary_key=True)
+    name = Column(String(255), nullable=False)
+    email = Column(String(255), unique=True)
+    phone = Column(String(20))
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    classes = relationship("Class", back_populates="faculty")
+
+
 class Class(Base):
     __tablename__ = "classes"
 
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String(255), nullable=False)
     course_code = Column(String(50))
+    faculty_id = Column(String(50), ForeignKey("faculty.faculty_id"), nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)
 
     sessions = relationship("Session", back_populates="class_ref")
+    faculty = relationship("Faculty", back_populates="classes")
 
 
 class Session(Base):

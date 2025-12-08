@@ -1,11 +1,16 @@
+# app/make_canonical.py
 import os
 import sys
 import numpy as np
 
+# Ensure app directory is on path when running as a script
+APP_DIR = os.path.dirname(os.path.abspath(__file__))
+if APP_DIR not in sys.path:
+    sys.path.append(APP_DIR)
+
 from embed_utils import get_face_embedding
 
 # Adjust paths relative to this file
-APP_DIR = os.path.dirname(os.path.abspath(__file__))
 BACKEND_DIR = os.path.dirname(APP_DIR)
 REPO_ROOT = os.path.dirname(BACKEND_DIR)
 
@@ -41,6 +46,7 @@ def make_canonical(enrollment_no: str):
     print(f"Saved canonical embedding to: {out_path}")
 
 if __name__ == "__main__":
+    import sys
     if len(sys.argv) < 2:
         print("Usage: python make_canonical.py <ENROLLMENT_NO>")
         sys.exit(1)

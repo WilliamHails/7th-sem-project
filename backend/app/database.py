@@ -6,7 +6,8 @@ import os
 
 load_dotenv()
 
-DATABASE_URL = "postgresql://postgres:arijit@localhost:5432/facial_attendance"
+# Read DATABASE_URL from environment (fallback to the previous default)
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:arijit@localhost:5432/facial_attendance")
 
 engine = create_engine(
     DATABASE_URL,
