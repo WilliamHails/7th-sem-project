@@ -826,3 +826,27 @@ def delete_class(class_id: int, db: Session = Depends(get_db)):
     db.commit()
 
     return {"status": "success", "message": f"Class {class_id} and related sessions/attendance deleted"}
+
+
+
+
+
+
+
+
+@app.get("/sessions/{session_id}/faculty_contact")
+def get_faculty_contact(session_id: int, db: Session = Depends(get_db)):
+    sess = db.query(DBSess).filter(DBSess.id == session_id).first()
+    if not sess or not sess.class_ref or not sess.class_ref.faculty_id:
+        raise HTTPException(status_code=404, detail="Faculty not found for this session")
+
+    fac = db.query(Faculty).filter(Faculty.faculty_id == sess.class_ref.faculty_id).first()
+    if not fac:
+        raise HTTPException(status_code=404, detail="Faculty not found")
+
+    return {
+      "faculty_id": fac.faculty_id,
+      "name": fac.name,
+      "email": fac.email,
+      "phone": fac.phone,
+    }
